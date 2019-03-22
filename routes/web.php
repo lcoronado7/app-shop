@@ -12,7 +12,13 @@ Route::get('/prueba',function(){
 	return 'HOLA SOY LA RUTA PRUEBA';
 });
 
+Route::get('/login','TestController@Cerrar_Logout')->name('login');
+
+
 
 Auth::routes(); //RUTA DE AUTENTICACION
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
